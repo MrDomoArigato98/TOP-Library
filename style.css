@@ -115,16 +115,16 @@ body{
     border-radius: 5px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
-.book-card h3{
 
-}
 .book-title,.book-author,.book-pages,.book-read{
     display: grid;
     grid-template-columns: 1fr 4fr;
     justify-items:start;
     align-items: baseline;
 }
-
+.book-card h3{
+    padding: 5px;
+}
 /* Use all this as a footer */
 footer {
     margin-top: 50px;
