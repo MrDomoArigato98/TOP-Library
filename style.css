@@ -111,6 +111,9 @@ body{
     grid-template-columns: 1fr 1fr 1fr;
 }
 /* Book-Cards */
+#template{
+    display: none;
+}
 .book-card{
     display: grid;
     padding:20px;

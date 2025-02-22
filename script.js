@@ -1,10 +1,11 @@
-const newBookButton = document.getElementById("addNewBook");
+const newBookButton = document.getElementById("add-new-book");
 const dialog = document.getElementById("dialog")
+
 
 let myLibrary = [];
 
-function Book(name, author, pages, isRead) {
-    this.name = name;
+function Book(title, author, pages, isRead) {
+    this.title = title;
     this.author = author;
     this.pages = pages;
     this.isRead = isRead;
@@ -17,17 +18,29 @@ function Book(name, author, pages, isRead) {
 function addBookToLibrary(name, author, pages, isRead) {
     let book = new Book(name, author, pages, isRead);
     myLibrary.push(book)
+
+    displayBook(book);
 }
 
 
 addBookToLibrary("1984", "George Orwell", 328, true);
 addBookToLibrary("The 48 Laws of Power", "Robert Greene", 480, true);
 
-console.log(myLibrary[0])
-console.log(myLibrary[1])
-function displayBook() {
 
+function displayBook(book) {
+    const template = document.getElementById("template");
+
+    console.log(book)
+    const newBookCard = template.cloneNode(true);
+    newBookCard.removeAttribute("id");
+    newBookCard.querySelector(".title").textContent = book.title;
+    newBookCard.querySelector(".author").textContent = book.author;
+    newBookCard.querySelector(".pages").textContent = book.pages;
+
+    //Display it after.
+    template.after(newBookCard)
 }
+displayBook();
 
 
 newBookButton.addEventListener("click", () => {
