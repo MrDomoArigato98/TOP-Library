@@ -104,17 +104,25 @@ body{
 
 .library{
     display: grid;
+    gap: 40px;
+    margin: 20px;
     grid-template-columns: 1fr 1fr 1fr;
 }
 .book-card{
     display: grid;
-    
-
     padding:20px;
+    justify-content: center;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
+.book-card h3{
 
-
+}
+.book-title,.book-author,.book-pages,.book-read{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    justify-items:start;
+    align-items: baseline;
+}
 
 /* Use all this as a footer */
 footer {
