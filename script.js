@@ -18,7 +18,6 @@ function Book(title, author, pages, isRead) {
 function addBookToLibrary(name, author, pages, isRead) {
     let book = new Book(name, author, pages, isRead);
     myLibrary.push(book)
-
     displayBook(book);
 }
 
@@ -33,18 +32,19 @@ function displayBook(book) {
     console.log(book)
     const newBookCard = template.cloneNode(true);
     newBookCard.removeAttribute("id");
+    newBookCard.setAttribute("bookindex", myLibrary.indexOf(book)) // Setting an attribute to the title so we can remove it later with the delete button.
     newBookCard.querySelector(".title").textContent = book.title;
     newBookCard.querySelector(".author").textContent = book.author;
     newBookCard.querySelector(".pages").textContent = book.pages;
+    
+    newBookCard.querySelector("#is-read").checked = false;
 
     //Display it after.
     template.after(newBookCard)
 }
-displayBook();
 
 
 newBookButton.addEventListener("click", () => {
     console.log("test");
-
     dialog.showModal();
 });
