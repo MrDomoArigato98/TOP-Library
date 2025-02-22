@@ -73,7 +73,9 @@ h6 {
     --navbar-bg-color: #CC998D;
     --navbar-text-color: white;
 
-    --body-bg-color:#ECEBE4;
+    --body-bg-color:white;
+
+    --book-card-bg-color:#ECEBE4;
 }
 
 .navbar {
@@ -114,6 +116,8 @@ body{
     justify-content: center;
     border-radius: 5px;
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+
+    background-color:#F5F5F5;
 }
 
 .book-title,.book-author,.book-pages,.book-read{
@@ -123,6 +127,7 @@ body{
     align-items: baseline;
 }
 .book-card h3{
+    
     padding: 5px;
 }
 /* Use all this as a footer */
