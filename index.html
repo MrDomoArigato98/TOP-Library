@@ -11,79 +11,79 @@
 </head>
 
 <body>
+    <div class="content">
+        <div class="navbar">
+            <div class="logo">Dom's Library</div>
+            <div class="nav-buttons">
+                <button id="add-new-book">New Book</button>
+            </div>
 
-    <div class="navbar">
-        <div class="logo">Dom's Library</div>
-        <div class="nav-buttons">
-            <button id="add-new-book">New Book</button>
+        </div>
+        <div class="library" id="library">
+
+            <div class="book-card" id="template">
+                <div class="book-author">
+                    <h3>Author:</h3>
+                    <p class="author"></p>
+                </div>
+                <div class="book-title">
+                    <h3>Title:</h3>
+                    <p class="title"></p>
+                </div>
+                <div class="book-pages">
+                    <h3>Pages:</h3>
+                    <p class="pages"></p>
+                </div>
+                <div class="book-read">
+                    <label for="is-read">
+                        <h3>Read:</h3>
+                    </label>
+                    <input type="checkbox" name="is-read-toggle" id="is-read" checked>
+                </div>
+                <div class="book-buttons">
+                    <button class="edit-button">Edit</button>
+                    <button class="borrow-button">Borrow</button>
+                    <button class="read-button">Toggle Read</button>
+                </div>
+            </div>
+
         </div>
 
+        <dialog id="dialog">
+            <div class="dialog-container">
+                <h1>Add new book</h1>
+                <form method="dialog">
+                    <div class="row">
+                        <label for="author-input">Author:*</label>
+                        <input type="text" name="author-input" id="author-input" required>
+                    </div>
+                    <div class="row">
+                        <label for="title-input">Title:*</label>
+                        <input type="text" name="title-input" id="title-input" required>
+                    </div>
+                    <div class="row">
+                        <label for="pages-input">Pages:*</label>
+                        <input type="number" name="pages-input" id="pages-input" required>
+                    </div>
+                    <div class="row-radio">
+                        <fieldset class="read-fieldset">
+                            <legend>Have you Read it?</legend>
+                            <label for="read">Yes
+                                <input class="radio-btn" type="radio" name="read-toggle" id="read">
+                            </label>
+                            <label for="not-read">No
+                                <input class="radio-btn" type="radio" name="read-toggle" id="not-read">
+                            </label>
+                        </fieldset>
+                    </div>
+                    <div class="row-buttons">
+                        <input id="cancel" type="submit" value="Cancel" formnovalidate>
+                        <input id="submit" type="submit" value="Add to Library">
+                    </div>
+                </form>
+            </div>
+        </dialog>
     </div>
-
-    <div class="library" id="library">
-
-        <div class="book-card" id="template">
-            <div class="book-author">
-                <h3>Author:</h3>
-                <p class="author"></p>
-            </div>
-            <div class="book-title">
-                <h3>Title:</h3>
-                <p class="title"></p>
-            </div>
-            <div class="book-pages">
-                <h3>Pages:</h3>
-                <p class="pages"></p>
-            </div>
-            <div class="book-read">
-                <label for="is-read">
-                    <h3>Read:</h3>
-                </label>
-                <input type="checkbox" name="is-read-toggle" id="is-read" checked>
-            </div>
-            <div class="book-buttons">
-                <button class="edit-button">Edit</button>
-                <button class="borrow-button">Borrow</button>
-                <button class="read-button">Toggle Read</button>
-            </div>
-        </div>
-
-    </div>
-
-    <dialog id="dialog">
-        <div class="dialog-container">
-            <h1>Add new book</h1>
-            <form method="dialog">
-                <div class="row">
-                    <label for="author-input">Author:*</label>
-                    <input type="text" name="author-input" id="author-input" required>
-                </div>
-                <div class="row">
-                    <label for="title-input">Title:*</label>
-                    <input type="text" name="title-input" id="title-input" required>
-                </div>
-                <div class="row">
-                    <label for="pages-input">Pages:*</label>
-                    <input type="number" name="pages-input" id="pages-input" required>
-                </div>
-                <div class="row-radio">
-                    <fieldset class="read-fieldset">
-                        <legend>Have you Read it?</legend>
-                        <label for="read">Yes
-                            <input class="radio-btn" type="radio" name="read-toggle" id="read" >
-                        </label>
-                        <label for="not-read">No
-                            <input class="radio-btn" type="radio" name="read-toggle" id="not-read">
-                        </label>
-                    </fieldset>
-                </div>
-                <div class="row-buttons">
-                    <input id="cancel" type="submit" value="Cancel" formnovalidate>
-                    <input id="submit" type="submit" value="Add to Library">
-                </div>
-            </form>
-        </div>
-    </dialog>
 </body>
 
 <footer>

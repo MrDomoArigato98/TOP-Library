@@ -77,6 +77,9 @@ h6 {
 
     --book-card-bg-color:#ECEBE4;
 }
+body{
+    background-color: var(--body-bg-color);
+}
 
 .navbar {
     display: grid;
@@ -89,7 +92,7 @@ h6 {
     font-size: larger;
     font-weight: bold;
     text-shadow: 1px 1px 1px #000000;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 .nav-buttons {
@@ -100,10 +103,10 @@ h6 {
     justify-self: start
 }
 
-body{
-    background-color: var(--body-bg-color);
-}
 
+.content{
+    margin-bottom: 200px;
+}
 .library{
     display: grid;
     gap: 40px;
@@ -197,7 +200,6 @@ footer {
 }
 
 #link {
-    margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -205,9 +207,19 @@ footer {
 .row-radio{
     justify-items: center;
 }
-footer a{
-    /* color: white; */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(228, 235, 236, 0.8);
+    backdrop-filter: blur(5px);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
+
 a:link {
     text-decoration: none;
 }
