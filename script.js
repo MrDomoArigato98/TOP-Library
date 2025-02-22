@@ -27,7 +27,10 @@ function addBookToLibrary(name, author, pages, isRead) {
 
 
 addBookToLibrary("1984", "George Orwell", 328, true);
-addBookToLibrary("The 48 Laws of Power", "Robert Greene", 480, true);
+addBookToLibrary("1984", "George Orwell", 328, true);
+addBookToLibrary("1984", "George Orwell", 328, true);
+addBookToLibrary("1984", "George Orwell", 328, true);
+ddBookToLibrary("The 48 Laws of Power", "Robert Greene", 480, true);
 
 
 function displayBook(book) {
