@@ -1,11 +1,11 @@
 const newBookButton = document.getElementById("add-new-book");
+
 const dialog = document.getElementById("dialog")
+let dialogButtonsArray = dialog.querySelectorAll("button")
+
 const dialogInputArray = document.querySelectorAll("input");
+const template = document.getElementById("template");
 
-const dialogSubmitButton = document.getElementById("add")
-const dialogCloseButton = document.getElementById("close")
-
-const buttonArray = document.querySelectorAll("input")
 let myLibrary = [];
 
 function Book(title, author, pages, isRead) {
@@ -31,8 +31,6 @@ addBookToLibrary("The 48 Laws of Power", "Robert Greene", 480, true);
 
 
 function displayBook(book) {
-    const template = document.getElementById("template");
-
     console.log(book)
     const newBookCard = template.cloneNode(true);
     newBookCard.removeAttribute("id");
@@ -40,16 +38,46 @@ function displayBook(book) {
     newBookCard.querySelector(".title").textContent = book.title;
     newBookCard.querySelector(".author").textContent = book.author;
     newBookCard.querySelector(".pages").textContent = book.pages;
-    
     newBookCard.querySelector("#is-read-toggle").checked = false;
 
-    //Display it after.
-    template.after(newBookCard)
+    document.getElementById("library").appendChild(newBookCard);
+
+    bookButtonsConfig(newBookCard);
 }
 
-console.log(buttonArray);
 
-newBookButton.addEventListener("click", () => {
-    console.log("test");
-    dialog.showModal();
+function bookButtonsConfig(bookCard) {
+    bookIndex = bookCard.getAttribute("bookindex");
+    console.log(bookIndex);
+    
+    let removeButton = bookCard.querySelector(".borrow-button");
+    removeButton.addEventListener("click", () => {
+        
+        if(myLibrary.length==1){
+            myLibrary.length=0;
+        }
+
+        bookCard.remove(); // Removes only this book card from DOM
+        
+        bookIndex = bookCard.getAttribute("bookindex");
+        console.log(bookIndex);
+        
+        myLibrary.splice(bookIndex, 1) //Remove from list of books
+    });
+
+
+}
+
+
+console.log(dialogButtonsArray)
+
+dialogButtonsArray.forEach(element => {
+    element.addEventListener("click", function(){
+        console.log("test")
+        if(element.id="submit"){
+
+        }if(element.id="cancel"){
+            
+        }
+    })
 });

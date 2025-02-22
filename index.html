@@ -20,7 +20,7 @@
 
     </div>
 
-    <div class="library">
+    <div class="library" id="library">
 
         <div class="book-card" id="template">
             <div class="book-author">
@@ -42,9 +42,9 @@
                 <input type="checkbox" name="is-read-toggle" id="is-read-toggle" checked>
             </div>
             <div class="book-buttons">
-                <button class="edit-button">Edit</button>
-                <button class="borrow-button">Borrow</button>
-                <button class="read-button">Toggle Read</button>
+                <button id="edit" class="edit-button">Edit</button>
+                <button id="borrow" class="borrow-button">Borrow</button>
+                <button id="toggle-read" class="read-button">Toggle Read</button>
             </div>
         </div>
 
@@ -69,8 +69,8 @@
                 <label for="is-read-input">Read?:*</label>
                 <input type="checkbox" name="is-read-input" id="is-read-input">
             </div>
-            <button id="close" value="cancel">Close</button>
-            <button id="add" value="default" >Add to library</button>
+            <button id="cancel" value="cancel">Cancel</button>
+            <button id="submit" value="default" >Add to library</button>
         </form>
 
     </dialog>
