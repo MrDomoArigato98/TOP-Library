@@ -34,19 +34,21 @@ function displayBook(book) {
     console.log(book)
     const newBookCard = template.cloneNode(true);
     newBookCard.removeAttribute("id");
-    newBookCard.setAttribute("bookindex", myLibrary.indexOf(book)) // Setting an attribute to the title so we can remove it later with the delete button.
+    // Setting an attribute to the title so we can remove it later with the delete button.
+    newBookCard.setAttribute("bookindex", myLibrary.indexOf(book)) 
     newBookCard.querySelector(".title").textContent = book.title;
     newBookCard.querySelector(".author").textContent = book.author;
     newBookCard.querySelector(".pages").textContent = book.pages;
-    newBookCard.querySelector("#is-read-toggle").checked = false;
+    newBookCard.querySelector("input").checked = false;
 
     document.getElementById("library").appendChild(newBookCard);
 
-    bookButtonsConfig(newBookCard);
+    bookButtonsListeners(newBookCard);
+    setUniqueId(newBookCard)
 }
 
 
-function bookButtonsConfig(bookCard) {
+function bookButtonsListeners(bookCard) {
     bookIndex = bookCard.getAttribute("bookindex");
     console.log(bookIndex);
     
@@ -68,16 +70,25 @@ function bookButtonsConfig(bookCard) {
 
 }
 
+function setUniqueId(bookCard){
 
+}
+// dialog.show()
+
+console.log(newBookButton)
+newBookButton.addEventListener("click", function(){
+
+    // dialog.show()
+})
 console.log(dialogButtonsArray)
 
 dialogButtonsArray.forEach(element => {
     element.addEventListener("click", function(){
-        console.log("test")
         if(element.id="submit"){
+            console.log("Submit")
 
         }if(element.id="cancel"){
-            
+            console.log("Cancel")
         }
     })
 });

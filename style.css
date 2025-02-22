@@ -142,13 +142,42 @@ body{
 }
 
 dialog{
-    /* display: flex; */
+    justify-self: center;
+    align-self: center;
 }
-
+.dialog-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows:auto;
+    width: 30vw;
+    max-width: 600px;
+    height: auto;
+    padding: 10px;
+}
+.dialog-container h1{
+    justify-self: center;
+    padding-bottom: 10px;
+}
 .row{
     display: flex;
+    justify-content:space-between;
+    padding: 10px;
 }
-
+.row-radio{
+    display: flex;
+    justify-content:center;
+}
+.row-buttons{
+    display: flex;
+    justify-content:space-around;
+    padding: 10px;
+}
+.row input{
+    color: red;
+}
+.dialog-buttons{
+    justify-content: space-between;
+}
 /* Book-Cards */
 /* Use all this as a footer */
 footer {
