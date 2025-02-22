@@ -69,7 +69,28 @@ h6 {
     isolation: isolate;
 }
 
+:root{
+    --navbar-bg-color: #CC998D;
+    --navbar-text-color: white;
+}
 .navbar{
     display: grid;
-    border:2px solid black;
+    padding: 20px;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background-color: var(--navbar-bg-color);
+    color: var(--navbar-text-color);
+    
+    font-size: larger;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px #000000;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.nav-buttons{
+    justify-self: end;
+}
+
+.logo{
+    justify-self:start
 }
