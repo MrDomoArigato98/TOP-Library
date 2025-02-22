@@ -1,7 +1,11 @@
 const newBookButton = document.getElementById("add-new-book");
 const dialog = document.getElementById("dialog")
+const dialogInputArray = document.querySelectorAll("input");
 
+const dialogSubmitButton = document.getElementById("add")
+const dialogCloseButton = document.getElementById("close")
 
+const buttonArray = document.querySelectorAll("input")
 let myLibrary = [];
 
 function Book(title, author, pages, isRead) {
@@ -37,12 +41,13 @@ function displayBook(book) {
     newBookCard.querySelector(".author").textContent = book.author;
     newBookCard.querySelector(".pages").textContent = book.pages;
     
-    newBookCard.querySelector("#is-read").checked = false;
+    newBookCard.querySelector("#is-read-toggle").checked = false;
 
     //Display it after.
     template.after(newBookCard)
 }
 
+console.log(buttonArray);
 
 newBookButton.addEventListener("click", () => {
     console.log("test");

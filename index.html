@@ -36,10 +36,10 @@
                 <p class="pages"></p>
             </div>
             <div class="book-read">
-                <label for="is-read">
+                <label for="is-read-toggle">
                     <h3>Read:</h3>
                 </label>
-                <input type="checkbox" name="is-read" id="is-read" checked>
+                <input type="checkbox" name="is-read-toggle" id="is-read-toggle" checked>
             </div>
             <div class="book-buttons">
                 <button class="edit-button">Edit</button>
@@ -50,9 +50,29 @@
 
     </div>
 
-    <dialog id="dialog">
-        <h1>Dialog</h1>
-        <button id="closeModal">Close modal</button>
+    <dialog id="dialog" class="addNew">
+        <h1>Add new book</h1>
+        <form method="dialog">
+            <div class="row">
+                <label for="author-input">Author:*</label>
+                <input type="text" name="author-input" id="author-input" required>
+            </div>
+            <div class="row">
+                <label for="title-input">Title:*</label>
+                <input type="text" name="title-input" id="title-input" required>
+            </div>
+            <div class="row">
+                <label for="pages-input">Pages:*</label>
+                <input type="number" name="pages-input" id="pages-input" required>
+            </div>
+            <div class="row">
+                <label for="is-read-input">Read?:*</label>
+                <input type="checkbox" name="is-read-input" id="is-read-input">
+            </div>
+            <button id="close" value="cancel">Close</button>
+            <button id="add" value="default" >Add to library</button>
+        </form>
+
     </dialog>
 </body>
 

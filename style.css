@@ -140,6 +140,15 @@ body{
     gap: 10px;
     padding: 5px;
 }
+
+dialog{
+    /* display: flex; */
+}
+
+.row{
+    display: flex;
+}
+
 /* Book-Cards */
 /* Use all this as a footer */
 footer {
