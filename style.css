@@ -110,6 +110,7 @@ body{
     margin: 20px;
     grid-template-columns: 1fr 1fr 1fr;
 }
+/* Book-Cards */
 .book-card{
     display: grid;
     padding:20px;
@@ -127,9 +128,16 @@ body{
     align-items: baseline;
 }
 .book-card h3{
-    
     padding: 5px;
 }
+
+.book-buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    gap: 10px;
+    padding: 5px;
+}
+/* Book-Cards */
 /* Use all this as a footer */
 footer {
     margin-top: 50px;
