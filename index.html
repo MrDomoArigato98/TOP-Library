@@ -67,24 +67,19 @@
                     <input type="number" name="pages-input" id="pages-input" required>
                 </div>
                 <div class="row-radio">
-                    <fieldset>
+                    <fieldset class="read-fieldset">
                         <legend>Have you Read it?</legend>
-                        <div class="radio-buttons">
-                            <div>
-                                <label for="read">Yes</label>
-                                <input type="radio" name="read-toggle" id="read">
-                            </div>
-                            <div>
-                                <label for="not-read">No</label>
-                                <input type="radio" name="read-toggle" id="not-read" >
-                            </div>
-                        </div>
+                        <label for="read">Yes
+                            <input class="radio-btn" type="radio" name="read-toggle" id="read" >
+                        </label>
+                        <label for="not-read">No
+                            <input class="radio-btn" type="radio" name="read-toggle" id="not-read">
+                        </label>
                     </fieldset>
                 </div>
                 <div class="row-buttons">
-
-                    <button id="cancel" value="cancel">Cancel</button>
-                    <button id="submit" value="submit">Add to library</button>
+                    <input id="cancel" type="submit" value="Cancel" formnovalidate>
+                    <input id="submit" type="submit" value="Add to Library">
                 </div>
             </form>
         </div>

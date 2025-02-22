@@ -1,9 +1,9 @@
 const newBookButton = document.getElementById("add-new-book");
 
 const dialog = document.getElementById("dialog")
-let dialogButtonsArray = dialog.querySelectorAll("button")
 
 const dialogInputArray = document.querySelectorAll("input");
+
 const template = document.getElementById("template");
 
 let myLibrary = [];
@@ -73,22 +73,29 @@ function bookButtonsListeners(bookCard) {
 function setUniqueId(bookCard){
 
 }
-// dialog.show()
+
+
 
 console.log(newBookButton)
+
 newBookButton.addEventListener("click", function(){
-
-    // dialog.show()
+    dialog.showModal();
+    dialog.focus();
 })
-console.log(dialogButtonsArray)
 
-dialogButtonsArray.forEach(element => {
-    element.addEventListener("click", function(){
-        if(element.id="submit"){
-            console.log("Submit")
 
-        }if(element.id="cancel"){
+console.log(dialogInputArray)
+
+dialogInputArray.forEach(element => {
+    element.addEventListener("click", function(e){
+        if(element.id=="submit"){
+            console.log("Submit");
+
+        }
+        if(element.id=="cancel"){
             console.log("Cancel")
+            e.preventDefault();
+            dialog.close();
         }
     })
 });

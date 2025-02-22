@@ -167,17 +167,22 @@ dialog{
     display: flex;
     justify-content:center;
 }
-.row-buttons{
-    display: flex;
-    justify-content:space-around;
-    padding: 10px;
-}
 .row input{
     color: red;
 }
 .dialog-buttons{
     justify-content: space-between;
 }
+.read-fieldset{
+    display: flex;
+    justify-content: space-around;
+}
+.row-buttons{
+    display: flex;
+    justify-content:space-around;
+    padding: 10px;
+}
+
 /* Book-Cards */
 /* Use all this as a footer */
 footer {
@@ -196,6 +201,9 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.row-radio{
+    justify-items: center;
 }
 footer a{
     /* color: white; */
