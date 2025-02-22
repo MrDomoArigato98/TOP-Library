@@ -6,26 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer> </script>
+
 </head>
 
 <body>
 
     <div class="navbar">
         <div class="logo">Dom's Library</div>
-
         <div class="nav-buttons">
-            <button>New Book</button>
-            <!--             
-            We can just add this on the books theirselves.
-            <button>Edit Book</button>
-            <button>Borrow book</button> 
--->
+            <button id="addNewBook">New Book</button>
         </div>
 
     </div>
 
     <div class="library">
-
         <div class="book-card">
             <div class="book-author">
                 <h3>Author:</h3>
@@ -40,7 +35,9 @@
                 <p class="page-num">300</p>
             </div>
             <div class="book-read">
-                <label for="is-read"><h3>Read:</h3></label>
+                <label for="is-read">
+                    <h3>Read:</h3>
+                </label>
                 <input type="checkbox" name="is-read" id="is-read" checked>
             </div>
             <div class="book-buttons">
@@ -50,9 +47,13 @@
             </div>
         </div>
 
-        
-    </div >
 
+    </div>
+
+    <dialog id="dialog">
+        <h1>Dialog</h1>
+        <button id="closeModal">Close modal</button>
+    </dialog>
 </body>
 
 <footer>
