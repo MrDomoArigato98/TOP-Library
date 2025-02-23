@@ -21,8 +21,8 @@ function Book(title, author, pages, isRead) {
 
 
 //Here we take some parameters, create your Book object, and add it to the list of books.
-function addBookToLibrary(name, author, pages, isRead) {
-    let book = new Book(name, author, pages, isRead);
+function addBookToLibrary(title, author, pages, isRead) {
+    let book = new Book(title, author, pages, isRead);
     myLibrary.push(book)
     displayBook(book);
 }
@@ -108,17 +108,15 @@ function getDialogInput(){
     let pagesInput = document.getElementById('pages-input').value;
     const selectedOption = document.querySelector('input[name="read-toggle"]:checked');
     let readInput = selectedOption.id
-    
+
     validateForm(authorInput,titleInput,pagesInput,readInput)
 
-    console.log(authorInput)
-    console.log(titleInput)
-    console.log(pagesInput)
-    console.log(readInput)
 }
 
 function validateForm(authorInput,titleInput,pagesInput,readInput){
-    if(authorInput==""){
-        console.log("No author")
+    if(authorInput===""|| titleInput==="" || pagesInput===""){
+        console.log("Missing field")
+    }else{
+        addBookToLibrary(titleInput,authorInput,pagesInput,readInput)
     }
 }
