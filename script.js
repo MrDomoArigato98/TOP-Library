@@ -37,7 +37,7 @@ function displayBook(book) {
     const newBookCard = template.cloneNode(true);
     newBookCard.removeAttribute("id");
     // Setting an attribute to the title so we can remove it later with the delete button.
-    newBookCard.setAttribute("bookindex", myLibrary.indexOf(book)) 
+    newBookCard.setAttribute("bookindex", myLibrary.indexOf(book))
     newBookCard.querySelector(".title").textContent = book.title;
     newBookCard.querySelector(".author").textContent = book.author;
     newBookCard.querySelector(".pages").textContent = book.pages;
@@ -53,46 +53,47 @@ function displayBook(book) {
 function bookButtonsListeners(bookCard) {
     bookIndex = bookCard.getAttribute("bookindex");
     console.log(bookIndex);
-    
+
     let removeButton = bookCard.querySelector(".borrow-button");
     removeButton.addEventListener("click", () => {
-        
-        if(myLibrary.length==1){
-            myLibrary.length=0;
+
+        if (myLibrary.length == 1) {
+            myLibrary.length = 0;
         }
 
         bookCard.remove(); // Removes only this book card from DOM
-        
+
         bookIndex = bookCard.getAttribute("bookindex");
         console.log(bookIndex);
-        
+
         myLibrary.splice(bookIndex, 1) //Remove from list of books
     });
 
 
 }
 
-function setUniqueId(bookCard){
+function setUniqueId(bookCard) {
 
 }
 
 
-newBookButton.addEventListener("click", function(){
+newBookButton.addEventListener("click", function () {
     dialog.showModal();
     dialog.focus();
 })
 
 dialogInputArray.forEach(element => {
-    element.addEventListener("click", function(e){
-        if(element.id=="submit-btn"){
+    element.addEventListener("click", function (e) {
+        if (element.id == "submit-btn") {
             console.log("Submit");
-            
-            
-    getDialogInput()
+
+
+            getDialogInput()
 
         }
-        if(element.id=="cancel-btn"){
+        if (element.id == "cancel-btn") {
             console.log("Cancel")
+            resetDialogInput()
             e.preventDefault();
             dialog.close();
         }
@@ -102,21 +103,27 @@ dialogInputArray.forEach(element => {
 console.log(dialog)
 console.log(dialogInputArray)
 
-function getDialogInput(){
+function getDialogInput() {
     let authorInput = document.getElementById('author-input').value;
     let titleInput = document.getElementById('title-input').value;
     let pagesInput = document.getElementById('pages-input').value;
     const selectedOption = document.querySelector('input[name="read-toggle"]:checked');
     let readInput = selectedOption.id
 
-    validateForm(authorInput,titleInput,pagesInput,readInput)
+    validateForm(authorInput, titleInput, pagesInput, readInput)
+
+}
+function resetDialogInput() {
+    let authorInput = document.getElementById('author-input').value = ""
+    let titleInput = document.getElementById('title-input').value = ""
+    let pagesInput = document.getElementById('pages-input').value = ""
 
 }
 
-function validateForm(authorInput,titleInput,pagesInput,readInput){
-    if(authorInput===""|| titleInput==="" || pagesInput===""){
+function validateForm(authorInput, titleInput, pagesInput, readInput) {
+    if (authorInput === "" || titleInput === "" || pagesInput === "") {
         console.log("Missing field")
-    }else{
-        addBookToLibrary(titleInput,authorInput,pagesInput,readInput)
+    } else {
+        addBookToLibrary(titleInput, authorInput, pagesInput, readInput)
     }
 }
