@@ -78,6 +78,7 @@ function setUniqueId(bookCard) {
 
 
 newBookButton.addEventListener("click", function () {
+    resetDialogInput();
     dialog.showModal();
     dialog.focus();
 })
@@ -86,14 +87,10 @@ dialogInputArray.forEach(element => {
     element.addEventListener("click", function (e) {
         if (element.id == "submit-btn") {
             console.log("Submit");
-
-
             getDialogInput()
-
         }
         if (element.id == "cancel-btn") {
             console.log("Cancel")
-            resetDialogInput()
             e.preventDefault();
             dialog.close();
         }
@@ -117,7 +114,6 @@ function resetDialogInput() {
     let authorInput = document.getElementById('author-input').value = ""
     let titleInput = document.getElementById('title-input').value = ""
     let pagesInput = document.getElementById('pages-input').value = ""
-
 }
 
 function validateForm(authorInput, titleInput, pagesInput, readInput) {
