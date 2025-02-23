@@ -52,7 +52,7 @@
         <dialog id="dialog">
             <div class="dialog-container">
                 <h1>Add new book</h1>
-                <form method="dialog">
+                 <form method="dialog" id="user-form">
                     <div class="row">
                         <label for="author-input">Author:*</label>
                         <input type="text" name="author-input" id="author-input" required>
@@ -77,8 +77,8 @@
                         </fieldset>
                     </div>
                     <div class="row-buttons">
-                        <input id="cancel" type="submit" value="Cancel" formnovalidate>
-                        <input id="submit" type="submit" value="Add to Library">
+                        <input id="cancel-btn" type="button" value="Cancel" formnovalidate>
+                        <input id="submit-btn" type="submit" value="Add to Library">
                     </div>
                 </form>
             </div>
