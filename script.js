@@ -31,6 +31,8 @@ function addBookToLibrary(title, author, pages, isRead) {
 
 addBookToLibrary("1984", "George Orwell", 328, "read");
 addBookToLibrary("The 48 Laws of Power", "Robert Greene", 480, "not-read");
+addBookToLibrary("Calm", "The School of Life", 176, "not-read");
+
 
 function displayBook(book) {
     console.log(book)

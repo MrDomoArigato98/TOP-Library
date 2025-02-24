@@ -70,14 +70,19 @@ h6 {
 }
 
 :root {
-    --navbar-bg-color: #CC998D;
+    --navbar-bg-color: #03012C;
     --navbar-text-color: white;
+    --body-bg-color: white;
 
-    --body-bg-color:white;
+    --book-card-bg-color: #F5F5F5;
+    --book-card-text-color:black;
+    
+    --footer-bg-color: #03012C;
+    --footer-text-color: white;
 
-    --book-card-bg-color:#ECEBE4;
 }
-body{
+
+body {
     background-color: var(--body-bg-color);
 }
 
@@ -92,7 +97,7 @@ body{
     font-size: larger;
     font-weight: bold;
     text-shadow: 1px 1px 1px #000000;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
 .nav-buttons {
@@ -104,89 +109,144 @@ body{
 }
 
 
-.content{
+.content {
     margin-bottom: 200px;
 }
-.library{
+
+.library {
     display: grid;
     gap: 40px;
     margin: 20px;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
 /* Book-Cards */
-#template{
+#template {
     display: none;
 }
-.book-card{
+
+button,.btn{
+    display: inline-block;
+    outline: none;
+    border-width: 0px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: inherit;
+    font-weight: 500;
+    max-width: 100%;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.1s ease-out 0s, box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38) 0s;
+    background: rgb(0, 82, 204);
+    cursor: pointer;
+    height: 32px;
+    line-height: 32px;
+    padding: 0px 12px;
+    vertical-align: middle;
+    width: auto;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+button:hover,.btn:hover {
+    background: rgb(0, 101, 255);
+    text-decoration: inherit;
+    transition-duration: 0s, 0.15s;
+    color: rgb(255, 255, 255);
+}
+
+
+.book-card {
     display: grid;
-    padding:20px;
+    padding: 20px;
     justify-content: center;
     border-radius: 5px;
-    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-
-    background-color:#F5F5F5;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    border:1px solid rgb(56, 56, 56);
+    color: var(--book-card-text-color);
+    background-color: var(--book-card-bg-color);
+    font-size: larger;
 }
 
-.book-title,.book-author,.book-pages,.book-read{
+.book-title,
+.book-author,
+.book-pages,
+.book-read {
     display: grid;
-    grid-template-columns: 1fr 4fr;
-    justify-items:start;
+    grid-template-columns: 100px auto;
+    justify-items: start;
     align-items: baseline;
 }
-.book-card h3{
+
+.book-card h3 {
     padding: 5px;
 }
 
-.book-buttons{
+.book-buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 5px;
 }
+
 /* Disable the clicking of the checkbox */
-.no-click {pointer-events: none;}
-dialog{
+.no-click {
+    pointer-events: none;
+}
+
+dialog {
     justify-self: center;
     align-self: center;
+    background-color: #ECE8EF;
+    
 }
-.dialog-container{
+
+.dialog-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows:auto;
+    grid-template-rows: auto;
     width: 30vw;
     max-width: 600px;
     height: auto;
     padding: 10px;
 }
-.dialog-container h1{
+
+.dialog-container h1 {
     justify-self: center;
     padding-bottom: 10px;
 }
-.row{
+
+.row {
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     padding: 10px;
+    font-weight: bold;
 }
-.row-radio{
+
+.row-radio {
     display: flex;
-    justify-content:center;
+    justify-content: center;
 }
-.row input{
-    color: red;
+
+.row input {
 }
-.dialog-buttons{
+
+.dialog-buttons {
     justify-content: space-between;
 }
-.read-fieldset{
+
+.read-fieldset {
     display: flex;
     justify-content: space-around;
 }
-.row-buttons{
+
+.row-buttons {
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
+    
     padding: 10px;
 }
-
 /* Book-Cards */
 /* Use all this as a footer */
 footer {
@@ -205,24 +265,29 @@ footer {
     flex-direction: column;
     align-items: center;
 }
-.row-radio{
+
+.row-radio {
     justify-items: center;
 }
+
 footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(228, 235, 236, 0.8);
+    background: var(--footer-bg-color);
     backdrop-filter: blur(5px);
     color: white;
     text-align: center;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
-
+footer a{
+    color: var(--footer-text-color);
+}
 a:link {
     text-decoration: none;
+    
 }
 
 a:visited {
@@ -240,3 +305,73 @@ a:hover {
 
 /* Use all this as a footer */
 
+
+body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+    animation: gradient 120s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 15s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 15s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 15s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
