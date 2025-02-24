@@ -16,11 +16,13 @@ function Book(title, author, pages, isRead) {
     this.pages = pages;
     this.isRead = isRead;
 }
-Book.prototype.toggleRead = function(){
-    if (this.isRead=="read"){
-        this.isRead ="not-read"
-    }else{
-        this.isRead=="read"
+Book.prototype.toggleRead = function () {
+    if (this.isRead == "read") {
+        console.log("not-read")
+        this.isRead = "not-read"
+    } else {
+        this.isRead = "read"
+        console.log("read")
     }
 }
 
@@ -46,41 +48,52 @@ function displayBook(book) {
     newBookCard.querySelector(".author").textContent = book.author;
     newBookCard.querySelector(".pages").textContent = book.pages;
 
-    
-    if (book.isRead=="read"){
-        newBookCard.querySelector("input").checked=true;
-    }else{
-        newBookCard.querySelector("input").checked=false;
-    }
-    
-
     document.getElementById("library").appendChild(newBookCard);
 
-    bookButtonsListeners(newBookCard);
+    toggleDisplayReadStatus(newBookCard,book)
+    bookButtonsListeners(newBookCard,book);
     setUniqueId(newBookCard)
 }
 
-
-function bookButtonsListeners(bookCard) {
+function toggleDisplayReadStatus(bookCard,book){
+    if (book.isRead == "read") {
+        bookCard.querySelector("input").checked = true;
+    } else {
+        bookCard.querySelector("input").checked = false;
+    }
+}
+function bookButtonsListeners(bookCard, book) {
     bookIndex = bookCard.getAttribute("bookindex");
     console.log(bookIndex);
 
-    let removeButton = bookCard.querySelector(".borrow-button");
-    removeButton.addEventListener("click", () => {
+    let bookButtons = bookCard.querySelectorAll("button")
+    console.log(bookButtons);
 
-        if (myLibrary.length == 1) {
-            myLibrary.length = 0;
-        }
+    bookButtons.forEach(button => {
+        button.addEventListener("click", function () {
 
-        bookCard.remove(); // Removes only this book card from DOM
+            if (button.getAttribute("class") == "read-button") {
+                console.log("Read-button")
+                book.toggleRead();
+                toggleDisplayReadStatus(bookCard,book)
+            }
 
-        bookIndex = bookCard.getAttribute("bookindex");
-        console.log(bookIndex);
+            if (button.getAttribute("class") == "borrow-button") {
+                console.log("borrow")
+                if (myLibrary.length == 1) {
+                    myLibrary.length = 0;
+                }
 
-        myLibrary.splice(bookIndex, 1) //Remove from list of books
-    });
+                bookCard.remove(); // Removes only this book card from DOM
 
+                bookIndex = bookCard.getAttribute("bookindex");
+                console.log(bookIndex);
 
+                myLibrary.splice(bookIndex, 1) //Remove from list of books
+            }
+
+        })
+    })
 }
 
 function setUniqueId(bookCard) {
