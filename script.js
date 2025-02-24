@@ -28,8 +28,8 @@ function addBookToLibrary(title, author, pages, isRead) {
 }
 
 
-addBookToLibrary("1984", "George Orwell", 328, true);
-addBookToLibrary("The 48 Laws of Power", "Robert Greene", 480, true);
+addBookToLibrary("1984", "George Orwell", 328, "read");
+addBookToLibrary("The 48 Laws of Power", "Robert Greene", 480, "not-read");
 
 
 function displayBook(book) {
@@ -41,7 +41,14 @@ function displayBook(book) {
     newBookCard.querySelector(".title").textContent = book.title;
     newBookCard.querySelector(".author").textContent = book.author;
     newBookCard.querySelector(".pages").textContent = book.pages;
-    newBookCard.querySelector("input").checked = false;
+
+    
+    if (book.isRead=="read"){
+        newBookCard.querySelector("input").checked=true;
+    }else{
+        newBookCard.querySelector("input").checked=false;
+    }
+    
 
     document.getElementById("library").appendChild(newBookCard);
 
@@ -91,7 +98,7 @@ dialogInputArray.forEach(element => {
         }
         if (element.id == "cancel-btn") {
             console.log("Cancel")
-            e.preventDefault();
+            // e.preventDefault();
             dialog.close();
         }
     })
