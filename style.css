@@ -387,7 +387,10 @@ body {
     .library {
         grid-template-columns: 1fr;
     }
-
+    dialog{
+        justify-self: center;
+        align-self: center;
+    }
     .dialog-container {
         height: auto;
         width: auto;
