@@ -82,7 +82,6 @@ function bookButtonsListeners(bookCard, book) {
 function setUniqueId(bookCard) {
 
 }
-
 newBookButton.addEventListener("click", function () {
     resetDialogInput();
     dialog.showModal();
