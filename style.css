@@ -160,7 +160,6 @@ button:hover,.btn:hover {
 .book-card {
     display: grid;
     padding: 20px;
-    justify-content: center;
     border-radius: 5px;
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
     border:1px solid rgb(56, 56, 56);
@@ -195,6 +194,8 @@ p.title, p.author{
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 5px;
+    justify-self: center;
+    max-width: 80%;
 }
 
 /* Disable the clicking of the checkbox */
