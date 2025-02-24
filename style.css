@@ -382,7 +382,7 @@ body {
     }
 }
 
-@media (max-width:500px){
+@media (max-width:700px){
 
     .library {
         grid-template-columns: 1fr;
