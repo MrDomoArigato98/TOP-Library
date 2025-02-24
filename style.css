@@ -397,9 +397,6 @@ body {
     }
     #dialog input{
         justify-content: center;
-        width: 50%;
-    }
-    #pages-input{
         max-width: 50%;
     }
 }
